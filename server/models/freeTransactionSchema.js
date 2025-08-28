@@ -1,0 +1,33 @@
+const mongoose = require('mongoose');
+const freeTransactionSchema = new mongoose.Schema({
+    tx_id: { type: String, required: true, unique: true }, 
+    tx_status: { type: String, required: true }, 
+    tx_process_name: { type: String, required: true },
+    tx_process_version: { type: Number, required: true },
+    tx_delivery_type: { type: String },
+    tx_amount: { type: Number, required: true },
+    tx_currency: { type: String, required: true },
+    tx_provider_amount: { type: Number, required: true },
+    tx_settled_outside: { type: String, required: true },
+    provider_id: { type: String, required: true },
+    customer_id: { type: String, required: true },
+    listing_id: { type: String, required: true },
+    listing_title: { type: String },
+    payment_intent_id: { type: String },
+    provider_transfer_id: { type: String },
+    provider_transfer_status: { type: String },
+    provider_transfer_amount: { type: Number },
+    provider_transfer_currency: { type: String },
+    provider_transfer_available_on: { type: Number },
+    provider_payout_id: { type: String },
+    provider_payout_status: { type: String },
+    provider_payout_amount: { type: Number },
+    provider_payout_currency: { type: String },
+    provider_payout_arrival_date: { type: Number }, 
+    reversal_id: { type: String },           
+    reversal_status: { type: String },       
+    refund_id: { type: String },             
+    refund_status: { type: String },         
+  }, { timestamps: true }); 
+  const FreeTransactionSchema = mongoose.model('FreeTransactionSchema', freeTransactionSchema); 
+  module.exports = FreeTransactionSchema;
