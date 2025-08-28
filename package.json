@@ -80,19 +80,19 @@
     "sweetalert2": "^11.22.1",
     "unified": "^9.2.2"
   },
-  "devDependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bfj": "^9.1.2",
-    "chalk": "^v4.1.2",
-    "concurrently": "^8.2.2",
-    "cross-env": "^7.0.3",
-    "inquirer": "^8.2.6",
-    "nodemon": "^3.1.9",
-    "prettier": "^1.18.2"
-  },
+ "devDependencies": {
+  "@testing-library/dom": "^9.3.4",
+  "@testing-library/jest-dom": "^6.5.0",
+  "@testing-library/react": "^14.2.1",
+  "@testing-library/user-event": "^14.5.2",
+  "bfj": "^9.1.2",
+  "chalk": "^4.1.2",
+  "concurrently": "^8.2.2",
+  "cross-env": "^7.0.3",
+  "inquirer": "^8.2.6",
+  "nodemon": "^3.1.9",
+  "prettier": "^1.18.2"
+},
   "resolutions": {
     "sharetribe-scripts/webpack-dev-server/express/path-to-regexp": "0.1.12",
     "moment": "^2.30.1"
