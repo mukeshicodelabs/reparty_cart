@@ -60,6 +60,7 @@ const PROCESSES = [
   },
 ];
 
+// Console
 /**
  * Helper functions to figure out if transaction is in a specific state.
  * State is based on lastTransition given by transaction object and state description.
