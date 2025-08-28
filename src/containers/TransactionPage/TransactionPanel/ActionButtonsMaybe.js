@@ -286,10 +286,10 @@ const ActionButtonsMaybe = props => {
         protectedData: { additionalfeeRequested: payload },
       });
 
-      await zendeskMail({
-        transactionId: transaction?.id?.uuid,
-        name: transaction?.customer?.attributes?.profile?.displayName || 'not valid',
-      });
+      // await zendeskMail({
+      //   transactionId: transaction?.id?.uuid,
+      //   name: transaction?.customer?.attributes?.profile?.displayName || 'not valid',
+      // });
 
 
       setModalVisible(false);

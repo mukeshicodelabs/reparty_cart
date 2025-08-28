@@ -995,7 +995,7 @@ const imageVariantInfo = getImageVariantInfo(listingImageConfig);
       // Add the created listing to the marketplace data
       dispatch(addMarketplaceEntities(response));
       dispatch(publishListingSuccess(response));
-      if (!isPublished) zendeskMail({ listingId: id?.uuid, title: attributes?.title, listingDraft: true });
+      // if (!isPublished) zendeskMail({ listingId: id?.uuid, title: attributes?.title, listingDraft: true });
       dispatch(createAlgoliaSearchData(response?.data, config));
       return response;
     })
