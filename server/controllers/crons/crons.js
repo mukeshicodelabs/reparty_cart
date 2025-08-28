@@ -14,14 +14,14 @@ const runCron = () => {
         //  delete listing from algolia Cron run in 5 min
         nodeCron.schedule('*/5 * * * * *', () => {
                 // console.log('&&& delete algolia listing Cron run in every 5 minute &&& => ');
-                deleteAlgoliaListings();
+                // deleteAlgoliaListings();
  
         });
 
         //  update listing in algolia Cron run in 5 min
         nodeCron.schedule('*/5 * * * * *', () => {
                 // console.log('&&& update algolia listing Cron run in every  minute &&& => ');
-                updateAlgoliaListings();
+                // updateAlgoliaListings();
 
         });
 
