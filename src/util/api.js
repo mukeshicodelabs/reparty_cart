@@ -12,7 +12,15 @@ export const apiBaseUrl = marketplaceRootURL => {
     return `http://localhost:${port}`;
   }
   // Otherwise, use the given marketplaceRootURL parameter or the same domain and port as the frontend
-  return marketplaceRootURL ? marketplaceRootURL.replace(/\/$/, '') : `${window.location.origin}`;
+  if (marketplaceRootURL) {
+    return marketplaceRootURL.replace(/\/$/, '');
+  }
+  // Check if we're in a browser environment
+  if (typeof window !== 'undefined' && window.location) {
+    return window.location.origin;
+  }
+  // Fallback for server-side rendering
+  return '';
 };
 // Application type handlers for JS SDK.
 //
@@ -55,7 +63,9 @@ const request = (path, options = {}) => {
     ...bodyMaybe,
     ...rest,
   };
-  return window.fetch(url, fetchOptions).then(res => {
+  // Use global fetch (available in Node.js 18+) or window.fetch
+  const fetchFn = typeof window !== 'undefined' ? window.fetch : fetch;
+  return fetchFn(url, fetchOptions).then(res => {
     const contentTypeHeader = res.headers.get('Content-Type');
     const contentType = contentTypeHeader ? contentTypeHeader.split(';')[0] : null;
     if (res.status >= 400) {
